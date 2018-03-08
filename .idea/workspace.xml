@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1ea46679-1eca-4855-97a2-b68a32ed46ee" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/robot/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/joystick/Event.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#735#736#0" expanded="true" />
+                <element signature="e#776#777#0" expanded="true" />
+                <element signature="e#810#811#0" expanded="true" />
+                <element signature="e#843#844#0" expanded="true" />
+                <element signature="e#1550#1551#0" expanded="true" />
+                <element signature="e#1574#1575#0" expanded="true" />
+                <element signature="e#1602#1603#0" expanded="true" />
+                <element signature="e#1627#1628#0" expanded="true" />
+                <element signature="e#1660#1661#0" expanded="true" />
+                <element signature="e#1689#1690#0" expanded="true" />
+                <element signature="e#1724#1725#0" expanded="true" />
+                <element signature="e#1756#1757#0" expanded="true" />
+                <element signature="e#1786#1787#0" expanded="true" />
+                <element signature="e#1810#1811#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Joystick.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/joystick/Joystick.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1872">
+              <caret line="136" column="90" lean-forward="false" selection-start-line="136" selection-start-column="90" selection-end-line="136" selection-end-column="90" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1561#1562#0" expanded="true" />
+                <element signature="e#1618#1619#0" expanded="true" />
+                <element signature="e#3657#3658#0" expanded="true" />
+                <element signature="e#3687#3688#0" expanded="true" />
+                <element signature="e#4854#4855#0" expanded="true" />
+                <element signature="e#4930#4931#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JoystickTestSuite.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/mib/joystick/JoystickTestSuite.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JoystickTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/mib/joystick/JoystickTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="800">
+              <caret line="63" column="65" lean-forward="false" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
+              <folding>
+                <element signature="e#808#809#0" expanded="true" />
+                <element signature="e#869#870#0" expanded="true" />
+                <element signature="e#1149#1150#0" expanded="true" />
+                <element signature="e#1185#1186#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Unsafe.class" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5120">
+              <caret line="353" column="22" lean-forward="false" selection-start-line="353" selection-start-column="22" selection-end-line="353" selection-end-column="22" />
+              <folding>
+                <marker date="1513730554000" expanded="false" signature="0:104" ph="/.../" />
+                <marker date="1513730554000" expanded="false" signature="132:297" ph="..." />
+                <marker date="1513730554000" expanded="true" signature="1469:1475" ph="{}" />
+                <marker date="1513730554000" expanded="true" signature="1533:1746" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="2890:2908" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="2967:2976" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="3013:3018" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="3023:3041" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="3111:3120" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="3156:3161" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="3166:3184" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="3249:3258" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="3298:3303" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="3308:3326" ph="/**...*/" />
+                <marker date="1513730554000" expanded="true" signature="3403:3455" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="3460:3478" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="3545:3554" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="3595:3600" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="3605:3623" ph="/**...*/" />
+                <marker date="1513730554000" expanded="true" signature="3702:3755" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="3760:3778" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="3839:3848" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="3886:3891" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="3896:3914" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="3986:3995" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="4032:4037" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="4042:4060" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="4123:4132" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="4171:4176" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="4181:4199" ph="/**...*/" />
+                <marker date="1513730554000" expanded="true" signature="4274:4325" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="4330:4348" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="4409:4418" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="4456:4461" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="4466:4484" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="4556:4565" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="4602:4607" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="4612:4630" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="4691:4700" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="4738:4743" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="4748:4766" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="4838:4847" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="4884:4889" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="4894:4912" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="4975:4984" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="5023:5028" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="5033:5051" ph="/**...*/" />
+                <marker date="1513730554000" expanded="true" signature="5126:5177" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="5182:5200" ph="/**...*/" />
+                <marker date="1513730554000" expanded="false" signature="5265:5274" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="5314:5319" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="5324:5342" ph="/**...*/" />
+                <marker date="1513730554000" expanded="true" signature="5419:5471" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="6518:6578" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="6733:6808" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="6859:6877" ph="/**...*/" />
+                <marker date="1513730554000" expanded="true" signature="6931:7062" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="7067:7085" ph="/**...*/" />
+                <marker date="1513730554000" expanded="true" signature="7149:7410" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="8187:8205" ph="/**...*/" />
+                <marker date="1513730554000" expanded="true" signature="8274:8292" ph="/**...*/" />
+                <marker date="1513730554000" expanded="true" signature="8360:8378" ph="/**...*/" />
+                <marker date="1513730554000" expanded="true" signature="10537:10710" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="10782:10958" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="11027:11193" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="11265:11434" ph="{...}" />
+                <marker date="1513730554000" expanded="true" signature="11512:11687" ph="{...}" />
+                <marker date="1513730554000" expanded="false" signature="11846:11855" ph=" { " />
+                <marker date="1513730554000" expanded="false" signature="11886:11891" ph=" }" />
+                <marker date="1513730554000" expanded="true" signature="11903:13423" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/mib/joystick/EventTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/org/mib/robot/GpioPinStateCallbackTrigger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mib/Event.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/mib/robot/AppTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mib/joystick/EventHandler.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/mib/joystick/JoystickTestSuite.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mib/joystick/Event.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mib/robot/App.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/mib/joystick/EventTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/mib/joystick/Joystick.java" />
+        <option value="$PROJECT_DIR$/src/test/java/org/mib/joystick/JoystickTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../tools/apache-maven-3.5.2" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="565" />
+    <option name="y" value="290" />
+    <option name="width" value="1349" />
+    <option name="height" value="905" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Code style issuesJava</id>
+          </State>
+          <State>
+            <id>Concurrency annotation issuesJava</id>
+          </State>
+          <State>
+            <id>Encapsulation issuesJava</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>ImportsJava</id>
+          </State>
+          <State>
+            <id>Inheritance issuesJava</id>
+          </State>
+          <State>
+            <id>JUnit issuesJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java 9Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Javadoc issuesJava</id>
+          </State>
+          <State>
+            <id>Logging issuesJava</id>
+          </State>
+          <State>
+            <id>Numeric issuesJava</id>
+          </State>
+          <State>
+            <id>Portability issuesJava</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>Resource management issuesJava</id>
+          </State>
+          <State>
+            <id>Security issuesJava</id>
+          </State>
+          <State>
+            <id>Serialization issuesJava</id>
+          </State>
+          <State>
+            <id>Threading issuesJava</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+          <State>
+            <id>XSLT</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="robot-prototype" type="b2602c69:ProjectViewProjectNode" />
+              <item name="led-test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="extract.method.default.visibility" value="protected" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/org/mib" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.mib.joystick" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.mib.joystick" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.Joystick Tests">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration name="App" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.mib.robot.App" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="led-test" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration name="Joystick Tests" type="JUnit" factoryName="JUnit">
+      <module name="led-test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.mib.joystick" />
+      <option name="MAIN_CLASS_NAME" value="org.mib.joystick.JoystickTestSuite" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="JoystickTest.testBadOpen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="led-test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.mib.joystick" />
+      <option name="MAIN_CLASS_NAME" value="org.mib.joystick.JoystickTest" />
+      <option name="METHOD_NAME" value="testBadOpen" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="led-test" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Application.App" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.Joystick Tests" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.JoystickTest.testBadOpen" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.JoystickTest.testBadOpen" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ea46679-1eca-4855-97a2-b68a32ed46ee" name="Default" comment="" />
+      <created>1519087645313</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1519087645313</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="JoystickTest_testBadOpen - 2018.03.04 at 16h 47m 01s.xml">
+      <configuration name="JoystickTest.testBadOpen" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Joystick_Tests - 2018.03.04 at 16h 20m 43s.xml">
+      <configuration name="Joystick Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Joystick_Tests - 2018.03.04 at 16h 20m 45s.xml">
+      <configuration name="Joystick Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Joystick_Tests - 2018.03.04 at 16h 20m 48s.xml">
+      <configuration name="Joystick Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Joystick_Tests - 2018.03.04 at 16h 46m 08s.xml">
+      <configuration name="Joystick Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Joystick_Tests - 2018.03.04 at 17h 06m 45s.xml">
+      <configuration name="Joystick Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Joystick_Tests - 2018.03.04 at 17h 36m 00s.xml">
+      <configuration name="Joystick Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Joystick_Tests - 2018.03.04 at 17h 37m 42s.xml">
+      <configuration name="Joystick Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Joystick_Tests - 2018.03.04 at 21h 42m 12s.xml">
+      <configuration name="Joystick Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Joystick_Tests - 2018.03.04 at 21h 44m 28s.xml">
+      <configuration name="Joystick Tests" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="565" y="290" width="1349" height="905" extended-state="0" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16679022" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28331333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25871015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39854413" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890996" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24985233" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3166515" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="13" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>~Type.INIT.getOrdinal() &amp; 1</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>~Type.INIT.getOrdinal()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/joystick/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#1550#1551#0" expanded="true" />
+            <element signature="e#1574#1575#0" expanded="true" />
+            <element signature="e#1602#1603#0" expanded="true" />
+            <element signature="e#1627#1628#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="e#1724#1725#0" expanded="true" />
+            <element signature="e#1756#1757#0" expanded="true" />
+            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1810#1811#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/robot/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/joystick/Joystick.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1872">
+          <caret line="136" column="90" lean-forward="false" selection-start-line="136" selection-start-column="90" selection-end-line="136" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1561#1562#0" expanded="true" />
+            <element signature="e#1618#1619#0" expanded="true" />
+            <element signature="e#3657#3658#0" expanded="true" />
+            <element signature="e#3687#3688#0" expanded="true" />
+            <element signature="e#4854#4855#0" expanded="true" />
+            <element signature="e#4930#4931#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/mib/joystick/JoystickTestSuite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/mib/joystick/JoystickTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="63" column="65" lean-forward="false" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
+          <folding>
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+            <element signature="e#1185#1186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5120">
+          <caret line="353" column="22" lean-forward="false" selection-start-line="353" selection-start-column="22" selection-end-line="353" selection-end-column="22" />
+          <folding>
+            <marker date="1513730554000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1513730554000" expanded="false" signature="132:297" ph="..." />
+            <marker date="1513730554000" expanded="true" signature="1469:1475" ph="{}" />
+            <marker date="1513730554000" expanded="true" signature="1533:1746" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="2890:2908" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="2967:2976" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="3013:3018" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="3023:3041" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="3111:3120" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="3156:3161" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="3166:3184" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="3249:3258" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="3298:3303" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="3308:3326" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="3403:3455" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="3460:3478" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="3545:3554" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="3595:3600" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="3605:3623" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="3702:3755" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="3760:3778" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="3839:3848" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="3886:3891" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="3896:3914" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="3986:3995" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="4032:4037" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="4042:4060" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="4123:4132" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="4171:4176" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="4181:4199" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="4274:4325" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="4330:4348" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="4409:4418" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="4456:4461" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="4466:4484" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="4556:4565" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="4602:4607" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="4612:4630" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="4691:4700" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="4738:4743" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="4748:4766" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="4838:4847" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="4884:4889" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="4894:4912" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="4975:4984" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="5023:5028" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="5033:5051" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="5126:5177" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="5182:5200" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="5265:5274" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="5314:5319" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="5324:5342" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="5419:5471" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="6518:6578" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="6733:6808" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="6859:6877" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="6931:7062" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="7067:7085" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="7149:7410" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="8187:8205" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="8274:8292" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="8360:8378" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="10537:10710" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="10782:10958" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="11027:11193" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="11265:11434" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="11512:11687" ph="{...}" />
+            <marker date="1513730554000" expanded="false" signature="11846:11855" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="11886:11891" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="11903:13423" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/mib/joystick/EventTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/robot/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/joystick/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#1550#1551#0" expanded="true" />
+            <element signature="e#1574#1575#0" expanded="true" />
+            <element signature="e#1602#1603#0" expanded="true" />
+            <element signature="e#1627#1628#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="e#1724#1725#0" expanded="true" />
+            <element signature="e#1756#1757#0" expanded="true" />
+            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1810#1811#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/joystick/Joystick.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1561#1562#0" expanded="true" />
+            <element signature="e#1618#1619#0" expanded="true" />
+            <element signature="e#3657#3658#0" expanded="true" />
+            <element signature="e#3687#3688#0" expanded="true" />
+            <element signature="e#4854#4855#0" expanded="true" />
+            <element signature="e#4930#4931#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/joystick/EventHandler.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/mib/joystick/EventTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="28" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/mib/joystick/JoystickTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+            <element signature="e#1185#1186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/pi4j/pi4j-core/1.2-SNAPSHOT/pi4j-core-1.2-20170907.193313-36-sources.jar!/com/pi4j/io/gpio/trigger/GpioCallbackTrigger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="67" column="32" lean-forward="true" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/robot/GpioPinStateCallbackTrigger.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/pi4j/pi4j-core/1.2-SNAPSHOT/pi4j-core-1.2-20170907.193313-36-sources.jar!/com/pi4j/io/gpio/trigger/GpioTriggerBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/mib/robot/AppTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/joystick/EventHandler.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/org/mib/joystick/test-single-event.bin">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/nio/Buffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="305" column="0" lean-forward="false" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/org/mib/joystick/test-multiple-events.bin">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/mib/joystick/EventTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5120">
+          <caret line="353" column="22" lean-forward="false" selection-start-line="353" selection-start-column="22" selection-end-line="353" selection-end-column="22" />
+          <folding>
+            <marker date="1513730554000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1513730554000" expanded="false" signature="132:297" ph="..." />
+            <marker date="1513730554000" expanded="true" signature="1469:1475" ph="{}" />
+            <marker date="1513730554000" expanded="true" signature="1533:1746" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="2890:2908" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="2967:2976" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="3013:3018" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="3023:3041" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="3111:3120" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="3156:3161" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="3166:3184" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="3249:3258" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="3298:3303" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="3308:3326" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="3403:3455" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="3460:3478" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="3545:3554" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="3595:3600" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="3605:3623" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="3702:3755" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="3760:3778" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="3839:3848" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="3886:3891" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="3896:3914" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="3986:3995" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="4032:4037" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="4042:4060" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="4123:4132" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="4171:4176" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="4181:4199" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="4274:4325" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="4330:4348" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="4409:4418" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="4456:4461" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="4466:4484" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="4556:4565" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="4602:4607" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="4612:4630" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="4691:4700" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="4738:4743" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="4748:4766" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="4838:4847" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="4884:4889" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="4894:4912" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="4975:4984" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="5023:5028" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="5033:5051" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="5126:5177" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="5182:5200" ph="/**...*/" />
+            <marker date="1513730554000" expanded="false" signature="5265:5274" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="5314:5319" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="5324:5342" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="5419:5471" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="6518:6578" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="6733:6808" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="6859:6877" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="6931:7062" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="7067:7085" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="7149:7410" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="8187:8205" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="8274:8292" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="8360:8378" ph="/**...*/" />
+            <marker date="1513730554000" expanded="true" signature="10537:10710" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="10782:10958" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="11027:11193" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="11265:11434" ph="{...}" />
+            <marker date="1513730554000" expanded="true" signature="11512:11687" ph="{...}" />
+            <marker date="1513730554000" expanded="false" signature="11846:11855" ph=" { " />
+            <marker date="1513730554000" expanded="false" signature="11886:11891" ph=" }" />
+            <marker date="1513730554000" expanded="true" signature="11903:13423" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/joystick/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#1550#1551#0" expanded="true" />
+            <element signature="e#1574#1575#0" expanded="true" />
+            <element signature="e#1602#1603#0" expanded="true" />
+            <element signature="e#1627#1628#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="e#1724#1725#0" expanded="true" />
+            <element signature="e#1756#1757#0" expanded="true" />
+            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1810#1811#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/mib/joystick/JoystickTestSuite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/mib/joystick/JoystickTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="63" column="65" lean-forward="false" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
+          <folding>
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+            <element signature="e#1185#1186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/joystick/Joystick.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1872">
+          <caret line="136" column="90" lean-forward="false" selection-start-line="136" selection-start-column="90" selection-end-line="136" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1561#1562#0" expanded="true" />
+            <element signature="e#1618#1619#0" expanded="true" />
+            <element signature="e#3657#3658#0" expanded="true" />
+            <element signature="e#3687#3688#0" expanded="true" />
+            <element signature="e#4854#4855#0" expanded="true" />
+            <element signature="e#4930#4931#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/mib/robot/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>robot-prototype</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.pi4j:pi4j-core:1.2-SNAPSHOT</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="$PROJECT_DIR$" />
+    <option value="clean" />
+    <option value="package" />
+    <option value="test" />
+    <option value="clean package" />
+  </component>
+</project>
