@@ -25,8 +25,8 @@ public class App
    }
 
    private static void readJoystick() throws Exception {
-      try(Joystick joystick = new Joystick("/dev/input/js0", new int[] { 1, 5 },
-            System.out::println)) {
+      try(Joystick joystick = new Joystick("/dev/input/js0", new int[] { 1, 5 })) {
+         joystick.addHandler(System.out::println);
          joystick.open();
          while(true) {
             Thread.sleep(10000);

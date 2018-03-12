@@ -11,7 +11,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.concurrent.*;
 import java.util.function.Consumer;
 import java.util.logging.Level;
@@ -23,7 +22,7 @@ import java.util.logging.Logger;
  * Documentation</a>
  */
 public class Joystick implements Closeable, AutoCloseable {
-   private static final Logger logger = Logger.getLogger(Joystick.class.getName());
+   private static final Logger log = Logger.getLogger(Joystick.class.getName());
    private static final int MAX_AXIS = 256;
 
    private final Path devicePath;
@@ -110,12 +109,9 @@ public class Joystick implements Closeable, AutoCloseable {
     * Construct an instance of the wrapper. One instance is required for each joystick.
     *
     * @param devicePath the path to the joystick character device. e.g. /dev/input/js0
-    * @param handlers the handlers that will be invoked for each joystick event
     */
-   @SafeVarargs
-   public Joystick(String devicePath, int[] axes, Consumer<Event>... handlers) {
+   public Joystick(String devicePath, int[] axes) {
       this.devicePath = Paths.get(devicePath);
-      this.handlers.addAll(Arrays.asList(handlers));
 
       if(axes != null) {
          for (int axe : axes) {
@@ -128,8 +124,12 @@ public class Joystick implements Closeable, AutoCloseable {
       }
    }
 
+   public void addHandler(Consumer<Event> handler) {
+      this.handlers.add(handler);
+   }
+
    public void open() throws IOException {
-      logger.info("Reading joystick events from " + devicePath + ".");
+      log.info("Reading joystick events from " + devicePath + ".");
       if(eventReaderFuture == null) {
          eventReader = new EventReader(FileChannel.open(devicePath, StandardOpenOption.READ));
          eventReaderFuture = executor.submit(eventReader);
@@ -153,7 +153,7 @@ public class Joystick implements Closeable, AutoCloseable {
             eventReaderFuture.cancel(true);
          }
       } catch(Exception e) {
-         logger.log(Level.WARNING, "Unable to cancel joystick read task. Complete shutdown may " +
+         log.log(Level.WARNING, "Unable to cancel joystick read task. Complete shutdown may " +
                "fail.", e);
       }
 
@@ -162,11 +162,7 @@ public class Joystick implements Closeable, AutoCloseable {
       try {
          executor.awaitTermination(5000, TimeUnit.MILLISECONDS);
       } catch(InterruptedException ie) {
-         logger.log(Level.INFO, "Interrupted before completely shutting down joystick read task.");
+         log.log(Level.INFO, "Interrupted before completely shutting down joystick read task.");
       }
-   }
-
-   public boolean hasStopped() {
-      return  eventReaderFuture != null && eventReaderFuture.isDone() && executor.isTerminated();
    }
 }

@@ -12,6 +12,8 @@ public class Event {
    private final boolean init;
 
    public static final int SIZE = 4 + 2 + 1 + 1; // time + value + type + number
+   public static final int MAX_VALUE = Short.MAX_VALUE;
+   public static final int MIN_VALUE = -Short.MAX_VALUE;
 
    public enum Type {
       BUTTON((byte)0x01),
@@ -31,11 +33,11 @@ public class Event {
          this.ordinal = ordinal;
       }
 
-      public byte getOrdinal() {
+      byte getOrdinal() {
          return ordinal;
       }
 
-      public static Type fromOrdinal(byte ordinal) {
+      static Type fromOrdinal(byte ordinal) {
          Type type = index.get(ordinal);
          if(type == null) {
             throw new IllegalArgumentException("Unexpected event type " + ordinal);
