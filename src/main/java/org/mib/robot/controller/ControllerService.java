@@ -16,8 +16,8 @@ public class ControllerService extends EventQueueService {
 
    @Inject
    ControllerService() {
-      axisMotorMap.put(0, 0);
-      axisMotorMap.put(2, 1);
+      axisMotorMap.put(1, 0);
+      axisMotorMap.put(5, 1);
    }
 
    @Subscribe
@@ -37,7 +37,7 @@ public class ControllerService extends EventQueueService {
          if(joystickEvent.getType() == JoystickEvent.Type.Axis) {
             // translate the axis to a motor
             getEventBus().post(new ChangeMotorSpeedEvent(mapToMotor(joystickEvent.getIndex()),
-                  joystickEvent.getValue()));
+                  -joystickEvent.getValue()));
          }
       }
    }

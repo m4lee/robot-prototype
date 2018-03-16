@@ -35,11 +35,11 @@ public class MotorService extends EventQueueService {
    @Override
    protected void handleEvent(Event event) {
       if(event instanceof ChangeMotorSpeedEvent) {
-         ChangeMotorSpeedEvent changeEVent = (ChangeMotorSpeedEvent)event;
-         Motor.Side side = changeEVent.getMotor() == LEFT_MOTOR_INDEX ? Motor.Side.LEFT : Motor.Side.RIGHT;
+         ChangeMotorSpeedEvent changeEvent = (ChangeMotorSpeedEvent)event;
+         Motor.Side side = changeEvent.getMotor() == LEFT_MOTOR_INDEX ? Motor.Side.LEFT : Motor.Side.RIGHT;
 
-         log.fine("Setting " + side + " motor to " + changeEVent.getSpeed());
-         motor.setSpeed(side, changeEVent.getSpeed());
+         log.fine("Setting " + side + " motor to " + changeEvent.getSpeed());
+         motor.setSpeed(side, changeEvent.getSpeed());
       }
    }
 }

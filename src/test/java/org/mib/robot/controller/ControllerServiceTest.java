@@ -35,7 +35,7 @@ public class ControllerServiceTest {
       TestHandler handler = new TestHandler();
       controllerComponent.eventBus().register(handler);
 
-      JoystickEvent joystickEvent = new JoystickEvent(0, 0.5f);
+      JoystickEvent joystickEvent = new JoystickEvent(1, 0.5f);
       controllerComponent.eventBus().post(joystickEvent);
 
       service.stopAsync().awaitTerminated(2000, TimeUnit.MILLISECONDS);
@@ -46,8 +46,8 @@ public class ControllerServiceTest {
    @Test
    public void testMapToMotor() {
       ControllerService service = controllerComponent.controller();
-      assertEquals("Axis didn't map to left motor", 0, service.mapToMotor(0));
-      assertEquals("Axis didn't map to right motor", 1, service.mapToMotor(2));
+      assertEquals("Axis didn't map to left motor", 0, service.mapToMotor(1));
+      assertEquals("Axis didn't map to right motor", 1, service.mapToMotor(5));
    }
 
    @Before

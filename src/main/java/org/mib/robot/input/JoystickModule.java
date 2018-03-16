@@ -9,6 +9,6 @@ public class JoystickModule {
 
    @Provides
    static Joystick joystick() {
-      return new Joystick("/dev/input/js0", new int[] {0, 2});
+      return new Joystick("/dev/input/js0", new int[] {1, 5});
    }
 }

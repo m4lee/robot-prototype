@@ -1,6 +1,8 @@
 package org.mib.robot;
 
 import com.google.common.collect.Sets;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.common.util.concurrent.Service;
 import com.google.common.util.concurrent.ServiceManager;
 import org.mib.robot.controller.ControllerService;
 import org.mib.robot.input.JoystickService;
@@ -45,6 +47,8 @@ public class Bootstrap {
       assert motor != null;
       assert serviceManager == null;
 
+      addServiceLoggerListener(gpio, joystick, controller, motor);
+
       // start and stop the GPIO service separately to set ordering
       gpio.startAsync().awaitRunning(SERVICE_TIMEOUT, TimeUnit.MILLISECONDS);
 
@@ -55,6 +59,30 @@ public class Bootstrap {
       Runtime.getRuntime().addShutdownHook(new Thread(Bootstrap.this::stop));
 
       serviceManager.startAsync().awaitHealthy(SERVICE_TIMEOUT, TimeUnit.MILLISECONDS);
+   }
+
+   private static class ServiceStatusLogger extends Service.Listener {
+      private final Service service;
+
+      public ServiceStatusLogger(Service service) {
+         this.service = service;
+      }
+
+      @Override
+      public void running() {
+         log.info(service + " is running.");
+      }
+
+      @Override
+      public void terminated(Service.State from) {
+         log.info( service + " has stopped.");
+      }
+   }
+
+   void addServiceLoggerListener(Service...services) {
+      for(Service service : services) {
+         service.addListener(new ServiceStatusLogger(service), MoreExecutors.directExecutor());
+      }
    }
 
    void stop() {
