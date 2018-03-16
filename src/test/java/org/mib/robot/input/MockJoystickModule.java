@@ -3,14 +3,16 @@ package org.mib.robot.input;
 import dagger.Module;
 import dagger.Provides;
 import org.mib.joystick.Joystick;
-import org.mockito.Mockito;
 
 import javax.inject.Singleton;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.withSettings;
+
 @Module
-class MockJoystickModule {
+public class MockJoystickModule {
    @Provides @Singleton
    static Joystick joystick() {
-      return Mockito.mock(Joystick.class);
+      return mock(Joystick.class, withSettings().useConstructor("notafile", null));
    }
 }

@@ -7,6 +7,7 @@ public class Event {
       this.timestamp = System.nanoTime();
    }
 
+   @SuppressWarnings("unused")
    public Event(long timestamp) {
       this.timestamp = timestamp;
    }

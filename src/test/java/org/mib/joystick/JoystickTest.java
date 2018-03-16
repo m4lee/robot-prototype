@@ -11,6 +11,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
+import static org.junit.Assert.assertEquals;
+
 public class JoystickTest {
 
 
@@ -57,6 +59,18 @@ public class JoystickTest {
    }
 
    @Test
+   public void testRaiseEvent() {
+      TestHandler handler = new TestHandler(1);
+      Event event = new Event(0, 0, Event.Type.BUTTON, 0, false);
+      try(Joystick joystick = new Joystick("notafile", null)) {
+         joystick.addHandler(handler);
+         joystick.raiseEvent(event);
+      }
+      assertEquals("No events captured", 1, handler.getReadEvents().size());
+      assertEquals("Event not captured", event, handler.getReadEvents().get(0));
+   }
+
+   @Test
    public void testProcessEvents() throws IOException, InterruptedException {
       testProcessEvents(1, null, singleTempFile);
       testProcessEvents(3, null, multipleTempFile);
@@ -72,7 +86,7 @@ public class JoystickTest {
          joystick.open();
          singleHandler.await();
       }
-      Assert.assertEquals("Not all events read", numberOfEvents, singleHandler.getReadEvents()
+      assertEquals("Not all events read", numberOfEvents, singleHandler.getReadEvents()
             .size());
    }
 

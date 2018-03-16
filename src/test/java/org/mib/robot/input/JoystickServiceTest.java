@@ -8,35 +8,30 @@ import org.junit.Test;
 import org.mib.joystick.Event;
 import org.mib.joystick.Joystick;
 import org.mib.robot.event.EventModule;
-import org.mockito.ArgumentCaptor;
 
 import javax.inject.Singleton;
 
+import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class JoystickServiceTest {
 
    private TestJoystickComponent joystickComponent;
 
-   private Event createMockEvent(Event.Type type, int axisOrButton, long time, int value) {
-      Event event = mock(org.mib.joystick.Event.class);
-      when(event.getEventType()).thenReturn(type);
-      when(event.getAxisOrButton()).thenReturn(axisOrButton);
-      when(event.getTime()).thenReturn(time);
-      when(event.getValue()).thenReturn(value);
-      return event;
+   @Before
+   public void before() {
+      joystickComponent = DaggerJoystickServiceTest_TestJoystickComponent.create();
    }
 
    @Test
    public void translateEvent() {
-      Event buttonEvent = createMockEvent(Event.Type.BUTTON, 1, 1L, 1);
+
+      Event buttonEvent = new Event(System.currentTimeMillis(), 1, Event.Type.BUTTON, 1, false);
 
       JoystickEvent translatedButtonEvent  = new JoystickService().translateEvent(buttonEvent);
 
@@ -45,8 +40,8 @@ public class JoystickServiceTest {
       assertTrue("The timestamp is wrong", translatedButtonEvent.getTimestamp() <= System.nanoTime());
       assertTrue("The button is not pressed", translatedButtonEvent.isPressed());
 
-      Event axisEvent = createMockEvent(Event.Type.AXIS, 2, 2L,
-            Math.round((float)org.mib.joystick.Event.MAX_VALUE / 4f));
+      Event axisEvent = new Event(System.currentTimeMillis(),
+            Math.round((float) Event.MAX_VALUE / 4f), Event.Type.AXIS, 2, false);
 
       double error = 0.5 / Event.MAX_VALUE; // 0.5 from the rounding
 
@@ -59,19 +54,16 @@ public class JoystickServiceTest {
       assertEquals("The value is wrong", 0.25f, translatedAxisEvent.getValue(), error);
    }
 
-   @Before
-   public void before() {
-      joystickComponent = DaggerJoystickServiceTest_TestJoystickComponent.create();
-   }
-
    @Test
    public void testStartUp() throws Exception {
-      joystickComponent.joystickService().startUp();
+      JoystickService service = joystickComponent.joystickService();
+      service.startAsync();
+      service.awaitRunning(2000, TimeUnit.MILLISECONDS);
       verify(joystickComponent.joystick()).open();
    }
 
    @Test
-   public void testRaiseEvent() {
+   public void testRaiseEvent() throws Exception {
 
       class TestHandler implements Consumer<JoystickEvent> {
          private JoystickEvent captured;
@@ -82,20 +74,23 @@ public class JoystickServiceTest {
          }
       }
 
-      joystickComponent.joystickService().startUp();
+      doCallRealMethod().when(joystickComponent.joystick()).addHandler(any());
+      doCallRealMethod().when(joystickComponent.joystick()).raiseEvent(any());
+      JoystickService service = joystickComponent.joystickService();
+      try {
+         service.startAsync().awaitRunning(2000, TimeUnit.MILLISECONDS);
 
-      @SuppressWarnings("unchecked")
-      ArgumentCaptor<Consumer<Event>> handlerCapture = ArgumentCaptor.forClass(Consumer.class);
+         TestHandler handler = new TestHandler();
+         joystickComponent.eventBus().register(handler);
 
-      verify(joystickComponent.joystick()).addHandler(handlerCapture.capture());
-
-      TestHandler handler = new TestHandler();
-      joystickComponent.eventBus().register(handler);
-
-      org.mib.joystick.Event buttonEvent = createMockEvent(Event.Type.BUTTON, 1, 1L, 0);
-      handlerCapture.getValue().accept(buttonEvent);
-
-      assertNotNull("JoystickEvent not raised.", handler.captured);
+         org.mib.joystick.Event buttonEvent = new Event(System.currentTimeMillis(), 0, Event.Type.BUTTON, 1, false);
+         joystickComponent.joystick().raiseEvent(buttonEvent);
+         assertNotNull("JoystickEvent not raised.", handler.captured);
+      } finally {
+         if(service != null && service.isRunning()) {
+            service.stopAsync().awaitTerminated(2000, TimeUnit.MILLISECONDS);
+         }
+      }
    }
 
    @Test
@@ -107,8 +102,8 @@ public class JoystickServiceTest {
    @Component(modules={MockJoystickModule.class, EventModule.class})
    @Singleton
    interface TestJoystickComponent {
+      Joystick joystick();
       JoystickService joystickService();
       EventBus eventBus();
-      Joystick joystick();
    }
 }

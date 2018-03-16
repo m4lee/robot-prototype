@@ -1,5 +1,7 @@
 package org.mib.joystick;
 
+import com.google.common.annotations.VisibleForTesting;
+
 import java.io.Closeable;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -35,7 +37,7 @@ public class Joystick implements Closeable, AutoCloseable {
    private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
    private class EventReader implements Runnable {
-      private final Logger logger = Logger.getLogger(EventReader.class.getName());
+      private final Logger log = Logger.getLogger(EventReader.class.getName());
       private final ByteChannel characterDevice;
       private volatile boolean stop = false;
 
@@ -53,7 +55,7 @@ public class Joystick implements Closeable, AutoCloseable {
             while (!stop) {
                int bytesRead = processEvents(buffer);
                if (bytesRead == -1) {
-                  logger.warning("Read the end of the joystick character device. Stopping event " +
+                  log.warning("Read the end of the joystick character device. Stopping event " +
                         "processing.");
                   stop = true;
                }
@@ -62,39 +64,28 @@ public class Joystick implements Closeable, AutoCloseable {
                }
             }
          } catch(ClosedByInterruptException cbie) {
-            logger.fine("Reading joystick events cancelled.");
+            log.fine("Reading joystick events cancelled.");
          } catch(Exception e) {
-            logger.log(Level.SEVERE, "Error while accepting joystick input.", e);
+            log.log(Level.SEVERE, "Error while accepting joystick input.", e);
          } finally {
             if(characterDevice != null) {
                try {
                   characterDevice.close();
                } catch(IOException ioe) {
-                  logger.log(Level.WARNING, "Error closing joystick device, " +
+                  log.log(Level.WARNING, "Error closing joystick device, " +
                         characterDevice, ioe);
                }
             }
          }
 
-         logger.info("Stopped reading joystick events.");
+         log.info("Stopped reading joystick events.");
       }
 
       private int processEvents(ByteBuffer buffer) throws IOException {
          int bytesRead = characterDevice.read(buffer);
          buffer.flip();
          for(int i = 0; i < bytesRead / Event.SIZE; i++) {
-            Event evt = new Event(buffer);
-            handlers.forEach(h -> {
-               if(h != null) {
-                  try {
-                     if(evt.getEventType() == Event.Type.BUTTON || axes[evt.getAxisOrButton()]) {
-                        h.accept(evt);
-                     }
-                  } catch (Exception e) {
-                     logger.log(Level.SEVERE, "Error handling joystick event.", e);
-                  }
-               }
-            });
+            raiseEvent(new Event(buffer));
          }
          return bytesRead;
       }
@@ -111,6 +102,8 @@ public class Joystick implements Closeable, AutoCloseable {
     * @param devicePath the path to the joystick character device. e.g. /dev/input/js0
     */
    public Joystick(String devicePath, int[] axes) {
+      assert devicePath != null;
+
       this.devicePath = Paths.get(devicePath);
 
       if(axes != null) {
@@ -126,6 +119,21 @@ public class Joystick implements Closeable, AutoCloseable {
 
    public void addHandler(Consumer<Event> handler) {
       this.handlers.add(handler);
+   }
+
+   @VisibleForTesting
+   public void raiseEvent(Event evt) {
+      handlers.forEach(h -> {
+         if (h != null) {
+            try {
+               if (evt.getEventType() == Event.Type.BUTTON || axes[evt.getAxisOrButton()]) {
+                  h.accept(evt);
+               }
+            } catch (Exception e) {
+               log.log(Level.SEVERE, "Error handling joystick event.", e);
+            }
+         }
+      });
    }
 
    public void open() throws IOException {

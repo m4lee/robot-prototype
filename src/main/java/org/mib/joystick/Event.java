@@ -1,5 +1,7 @@
 package org.mib.joystick;
 
+import com.google.common.annotations.VisibleForTesting;
+
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +15,7 @@ public class Event {
 
    public static final int SIZE = 4 + 2 + 1 + 1; // time + value + type + number
    public static final int MAX_VALUE = Short.MAX_VALUE;
+   @SuppressWarnings("unused")
    public static final int MIN_VALUE = -Short.MAX_VALUE;
 
    public enum Type {
@@ -47,6 +50,9 @@ public class Event {
    }
 
    Event(ByteBuffer buffer) {
+      assert buffer != null;
+      assert buffer.remaining() >= SIZE;
+
       this.time = Integer.toUnsignedLong(buffer.getInt());
       this.value = buffer.getShort();
 
@@ -55,6 +61,17 @@ public class Event {
       this.init = (eventTypeCode & Type.INIT.getOrdinal()) == Type.INIT.getOrdinal();
 
       this.axisOrButton = Byte.toUnsignedInt(buffer.get());
+   }
+
+   @VisibleForTesting
+   public Event(long time, int value, Type eventType, int axisOrButton, boolean init) {
+      assert eventType != null;
+
+      this.time = time;
+      this.value = value;
+      this.eventType = eventType;
+      this.axisOrButton = axisOrButton;
+      this.init = init;
    }
 
    public long getTime() {
@@ -80,9 +97,9 @@ public class Event {
    @Override
    public String toString() {
       return "Event (time: " + getTime() +
-            ",value: " + getValue() +
-            ",type: " + getEventType() +
-            ",number: " + getAxisOrButton() +
-            ",init: " + isInit() + ")";
+            ", value: " + getValue() +
+            ", type: " + getEventType() +
+            ", number: " + getAxisOrButton() +
+            ", init: " + isInit() + ")";
    }
 }

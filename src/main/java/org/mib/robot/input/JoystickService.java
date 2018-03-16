@@ -21,7 +21,8 @@ public class JoystickService extends AbstractIdleService {
    @SuppressWarnings("WeakerAccess")
    @Inject Joystick joystick;
 
-   @Inject JoystickService() {
+   @Inject
+   JoystickService() {
       // allow injection
    }
 
@@ -36,6 +37,8 @@ public class JoystickService extends AbstractIdleService {
    }
 
    JoystickEvent translateEvent(org.mib.joystick.Event apiEvent) {
+      assert apiEvent != null;
+
       JoystickEvent event;
       if(apiEvent.getEventType() == org.mib.joystick.Event.Type.AXIS) {
          event = new JoystickEvent(apiEvent.getAxisOrButton(), (float)apiEvent.getValue() /
@@ -49,13 +52,5 @@ public class JoystickService extends AbstractIdleService {
    @Override
    protected void shutDown() {
       joystick.close();
-   }
-
-   Joystick getJoystick() {
-      return joystick;
-   }
-
-   EventBus getEventBus() {
-      return eventBus;
    }
 }
