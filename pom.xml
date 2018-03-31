@@ -36,6 +36,12 @@
       </dependency>
 
       <dependency>
+         <groupId>com.moandjiezana.toml</groupId>
+         <artifactId>toml4j</artifactId>
+         <version>0.7.2</version>
+      </dependency>
+
+      <dependency>
          <groupId>com.google.guava</groupId>
          <artifactId>guava</artifactId>
          <version>24.0-jre</version>
@@ -76,6 +82,22 @@
                   </goals>
                </execution>
             </executions>
+         </plugin>
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>appassembler-maven-plugin</artifactId>
+            <version>1.10</version>
+            <configuration>
+               <programs>
+                  <program>
+                     <mainClass>org.mib.robot.Main</mainClass>
+                     <id>pbot</id>
+                  </program>
+                  <platforms>
+                     <platform>unix</platform>
+                  </platforms>
+               </programs>
+            </configuration>
          </plugin>
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>

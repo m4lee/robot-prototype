@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mib.joystick.Event;
 import org.mib.joystick.Joystick;
+import org.mib.robot.configuration.TestConfigurationModule;
 import org.mib.robot.event.EventModule;
 
 import javax.inject.Singleton;
@@ -33,7 +34,8 @@ public class JoystickServiceTest {
 
       Event buttonEvent = new Event(System.currentTimeMillis(), 1, Event.Type.BUTTON, 1, false);
 
-      JoystickEvent translatedButtonEvent  = new JoystickService().translateEvent(buttonEvent);
+      JoystickEvent translatedButtonEvent  = new JoystickService().translateEvent
+            (buttonEvent);
 
       assertEquals("Event is not a button press", JoystickEvent.Type.Button, translatedButtonEvent.getType());
       assertEquals("The button index is wrong", 1, translatedButtonEvent.getIndex());
@@ -99,7 +101,7 @@ public class JoystickServiceTest {
       verify(joystickComponent.joystick()).close();
    }
 
-   @Component(modules={MockJoystickModule.class, EventModule.class})
+   @Component(modules={MockJoystickModule.class, TestConfigurationModule.class, EventModule.class})
    @Singleton
    interface TestJoystickComponent {
       Joystick joystick();

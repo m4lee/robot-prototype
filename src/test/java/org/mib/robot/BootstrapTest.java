@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mib.joystick.Event;
 import org.mib.joystick.Joystick;
+import org.mib.robot.configuration.TestConfigurationModule;
 import org.mib.robot.event.EventModule;
 import org.mib.robot.input.MockJoystickModule;
 import org.mib.robot.motor.MockMotorModule;
@@ -36,6 +37,7 @@ public class BootstrapTest {
 
       Bootstrap bootstrap = bootstrapComponent.bootstrap();
       doCallRealMethod().when(bootstrapComponent.joystick()).addHandler(any());
+      doCallRealMethod().when(bootstrapComponent.joystick()).setAxes(any());
       doCallRealMethod().when(bootstrapComponent.joystick()).raiseEvent(any());
       try {
          bootstrap.start();
@@ -52,6 +54,11 @@ public class BootstrapTest {
 
          Event rightBackEvent = new Event(0, JOYSTICK_VALUE, Event.Type.AXIS, 5, false);
          bootstrapComponent.joystick().raiseEvent(rightBackEvent);
+
+         // raise a spurious joystick event and confirm that it's not called.
+         Event invalidEvent = new Event(0, JOYSTICK_VALUE, Event.Type.AXIS, 0, false);
+         bootstrapComponent.joystick().raiseEvent(invalidEvent);
+
          Motor motor = bootstrapComponent.motor();
 
          verify(motor, timeout(500)).setSpeed(Motor.Side.LEFT, EXPECTED_MOTOR_VALUE);
@@ -85,7 +92,8 @@ public class BootstrapTest {
    @Component(modules={MockJoystickModule.class,
          MockGpioModule.class,
          MockMotorModule.class,
-         EventModule.class})
+         EventModule.class,
+         TestConfigurationModule.class})
    @Singleton
    interface TestBootstrap {
       Bootstrap bootstrap();

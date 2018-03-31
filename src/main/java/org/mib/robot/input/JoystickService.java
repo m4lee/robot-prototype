@@ -20,6 +20,8 @@ public class JoystickService extends AbstractIdleService {
    @Inject EventBus eventBus;
    @SuppressWarnings("WeakerAccess")
    @Inject Joystick joystick;
+   @SuppressWarnings("WeakerAccess")
+   @Inject JoystickConfiguration configuration;
 
    @Inject
    JoystickService() {
@@ -29,6 +31,7 @@ public class JoystickService extends AbstractIdleService {
    @Override
    protected void startUp() {
       joystick.addHandler(event -> eventBus.post(translateEvent(event)));
+      joystick.setAxes(configuration.getAxes());
       try {
          joystick.open();
       } catch(IOException ioe) {

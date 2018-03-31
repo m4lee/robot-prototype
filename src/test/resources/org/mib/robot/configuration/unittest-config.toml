@@ -1,0 +1,12 @@
+[with-array]
+simple = "test"
+array = [1, 2, 3]
+
+[compound]
+name = "identifier"
+
+[[compound.instance]]
+id = 1
+
+[[compound.instance]]
+id = 2

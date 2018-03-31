@@ -29,15 +29,17 @@ import javax.inject.Inject;
  */
 public class Motor {
    public enum Side {
-      LEFT(RaspiPin.GPIO_24, RaspiPin.GPIO_23),
-      RIGHT(RaspiPin.GPIO_26, RaspiPin.GPIO_27);
+      LEFT(RaspiPin.GPIO_24, RaspiPin.GPIO_23, true),
+      RIGHT(RaspiPin.GPIO_26, RaspiPin.GPIO_27, false);
 
       private final Pin enablePin;
       private final Pin directionPin;
+      private final boolean invert;
 
-      Side (Pin enablePin, Pin directionPin) {
+      Side(Pin enablePin, Pin directionPin, boolean invert) {
          this.enablePin = enablePin;
          this.directionPin = directionPin;
+         this.invert = invert;
       }
 
       Pin getEnablePin() {
@@ -46,6 +48,10 @@ public class Motor {
 
       Pin getDirectionPin() {
          return directionPin;
+      }
+
+      boolean isInverted() {
+         return invert;
       }
    }
    /**
@@ -97,7 +103,9 @@ public class Motor {
       GpioPinPwmOutput enablePin = side == Side.LEFT ? leftEnablePin : rightEnablePin;
       GpioPinDigitalOutput directionPin = side == Side.LEFT ? leftDirectionPin: rightDirectionPin;
 
-      directionPin.setState(speed >= 0 ? PinState.LOW : PinState.HIGH);
+      // the motor can be flipped on one side so we have to invert the direction
+      directionPin.setState(speed >= 0 && !side.isInverted() || speed < 0 && side.isInverted()
+            ? PinState.LOW : PinState.HIGH);
       enablePin.setPwm(translateSpeed(speed));
    }
 

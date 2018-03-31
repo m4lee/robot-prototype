@@ -31,7 +31,7 @@ public class Joystick implements Closeable, AutoCloseable {
 
    private EventReader eventReader;
    private final ArrayList<Consumer<Event>> handlers = new ArrayList<>();
-   private final boolean[] axes = new boolean[MAX_AXIS];
+   private volatile boolean[] axes = new boolean[MAX_AXIS];
 
    private Future<?> eventReaderFuture;
    private final ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -101,39 +101,44 @@ public class Joystick implements Closeable, AutoCloseable {
     *
     * @param devicePath the path to the joystick character device. e.g. /dev/input/js0
     */
-   public Joystick(String devicePath, int[] axes) {
+   public Joystick(String devicePath) {
       assert devicePath != null;
 
       this.devicePath = Paths.get(devicePath);
-
-      if(axes != null) {
-         for (int axe : axes) {
-            this.axes[axe] = true;
-         }
-      } else {
-         for(int i = 0; i < this.axes.length; i++) {
-            this.axes[i] = true;
-         }
-      }
    }
 
    public void addHandler(Consumer<Event> handler) {
       this.handlers.add(handler);
    }
 
+   public void setAxes(int[] axes) {
+      assert axes == null || axes.length <= MAX_AXIS;
+      boolean[] tmp = new boolean[MAX_AXIS];
+      if(axes != null) {
+         for (int axe : axes) {
+            tmp[axe] = true;
+         }
+      } else {
+         for(int i = 0; i < this.axes.length; i++) {
+            tmp[i] = true;
+         }
+      }
+      this.axes = tmp;
+   }
+
    @VisibleForTesting
    public void raiseEvent(Event evt) {
-      handlers.forEach(h -> {
-         if (h != null) {
-            try {
-               if (evt.getEventType() == Event.Type.BUTTON || axes[evt.getAxisOrButton()]) {
+      if (evt.getEventType() == Event.Type.BUTTON || axes[evt.getAxisOrButton()]) {
+         handlers.forEach(h -> {
+            if (h != null) {
+               try {
                   h.accept(evt);
+               } catch (Exception e) {
+                  log.log(Level.SEVERE, "Error handling joystick event.", e);
                }
-            } catch (Exception e) {
-               log.log(Level.SEVERE, "Error handling joystick event.", e);
             }
-         }
-      });
+         });
+      }
    }
 
    public void open() throws IOException {

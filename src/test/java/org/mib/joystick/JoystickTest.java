@@ -46,13 +46,13 @@ public class JoystickTest {
 
    @Test(expected = NoSuchFileException.class)
    public void testBadOpen() throws IOException {
-      Joystick joystick = new Joystick("notafile", null);
+      Joystick joystick = new Joystick("notafile");
       joystick.open();
    }
 
    @Test
    public void open() throws IOException {
-      try(Joystick joystick = new Joystick(singleTempFile.toString(), null)) {
+      try(Joystick joystick = new Joystick(singleTempFile.toString())) {
          joystick.open();
          Assert.assertTrue("Joystick not running", joystick.isRunning());
       }
@@ -62,7 +62,7 @@ public class JoystickTest {
    public void testRaiseEvent() {
       TestHandler handler = new TestHandler(1);
       Event event = new Event(0, 0, Event.Type.BUTTON, 0, false);
-      try(Joystick joystick = new Joystick("notafile", null)) {
+      try(Joystick joystick = new Joystick("notafile")) {
          joystick.addHandler(handler);
          joystick.raiseEvent(event);
       }
@@ -81,8 +81,9 @@ public class JoystickTest {
    private void testProcessEvents(int numberOfEvents, int[] axes, Path testFile) throws IOException,
          InterruptedException {
       TestHandler singleHandler = new TestHandler(numberOfEvents);
-      try(Joystick joystick = new Joystick(testFile.toString(), axes)) {
+      try(Joystick joystick = new Joystick(testFile.toString())) {
          joystick.addHandler(singleHandler);
+         joystick.setAxes(axes);
          joystick.open();
          singleHandler.await();
       }
@@ -92,7 +93,7 @@ public class JoystickTest {
 
    @Test
    public void close() throws IOException {
-      try(Joystick joystick = new Joystick(singleTempFile.toString(), null)) {
+      try(Joystick joystick = new Joystick(singleTempFile.toString())) {
          joystick.open();
       }
    }
