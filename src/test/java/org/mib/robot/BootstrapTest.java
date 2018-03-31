@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.mib.joystick.Event;
 import org.mib.joystick.Joystick;
 import org.mib.robot.configuration.TestConfigurationModule;
+import org.mib.robot.controller.ControllerModule;
 import org.mib.robot.event.EventModule;
 import org.mib.robot.input.MockJoystickModule;
 import org.mib.robot.motor.MockMotorModule;
@@ -92,6 +93,7 @@ public class BootstrapTest {
    @Component(modules={MockJoystickModule.class,
          MockGpioModule.class,
          MockMotorModule.class,
+         ControllerModule.class,
          EventModule.class,
          TestConfigurationModule.class})
    @Singleton

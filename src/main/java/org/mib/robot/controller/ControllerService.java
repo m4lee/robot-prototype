@@ -7,17 +7,16 @@ import org.mib.robot.input.JoystickEvent;
 import org.mib.robot.motor.ChangeMotorSpeedEvent;
 
 import javax.inject.Inject;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.Map;
 
 public class ControllerService extends EventQueueService {
 
-   private final Map<Integer, Integer> axisMotorMap = new HashMap<>();
+   private final Map<Integer, Integer> axisMotorMap;
 
    @Inject
-   ControllerService() {
-      axisMotorMap.put(1, 0);
-      axisMotorMap.put(5, 1);
+   ControllerService(ControllerConfiguration configuration) {
+      axisMotorMap = Collections.unmodifiableMap(configuration.getAxisMotorMap());
    }
 
    @Subscribe

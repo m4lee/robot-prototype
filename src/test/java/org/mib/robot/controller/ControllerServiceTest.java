@@ -5,6 +5,7 @@ import com.google.common.eventbus.Subscribe;
 import dagger.Component;
 import org.junit.Before;
 import org.junit.Test;
+import org.mib.robot.configuration.TestConfigurationModule;
 import org.mib.robot.event.EventModule;
 import org.mib.robot.input.JoystickEvent;
 import org.mib.robot.motor.ChangeMotorSpeedEvent;
@@ -55,7 +56,7 @@ public class ControllerServiceTest {
       controllerComponent = DaggerControllerServiceTest_TestControllerComponent.create();
    }
 
-   @Component(modules={EventModule.class})
+   @Component(modules={ControllerModule.class, TestConfigurationModule.class, EventModule.class})
    @Singleton
    interface TestControllerComponent {
       ControllerService controller();
