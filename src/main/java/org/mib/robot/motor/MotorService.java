@@ -16,8 +16,6 @@ public class MotorService extends EventQueueService {
    @SuppressWarnings("WeakerAccess")
    @Inject MotorConfiguration configuration;
 
-   private static final int LEFT_MOTOR_INDEX = 0;
-
    @SuppressWarnings("WeakerAccess")
    @Inject MotorService() {
       // allow injection

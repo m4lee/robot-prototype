@@ -4,7 +4,6 @@ import com.pi4j.io.gpio.*;
 import org.mib.robot.pi.GpioUtil;
 
 import javax.inject.Inject;
-import java.util.stream.Collectors;
 
 /**
  * A facade to the GPIO interface to control the motors. This controls a DFRobot MD1.3.
@@ -34,6 +33,7 @@ public class Motor {
    private final MotorInstance[] instances = new MotorInstance[MAX_MOTORS];
 
    private static class MotorInstance {
+      @SuppressWarnings("unused")
       private final String name;
       private final GpioPinPwmOutput enablePin;
       private final GpioPinDigitalOutput directionPin;
@@ -65,18 +65,12 @@ public class Motor {
     * clock divider of 8. This gives a final frequency of 2.34 kHz.
     *
     * @see org.mib.robot.pi.GpioModule#PWM_CLOCK_FREQUENCY
-    * @see org.mib.robot.pi.GpioModule#CLOCK_DIVISOR
     */
    private static final int TICKS = 1024;
 
    @Inject
    @SuppressWarnings("WeakerAccess")
    GpioController gpio;
-
-   private GpioPinPwmOutput leftEnablePin;
-   private GpioPinDigitalOutput leftDirectionPin;
-   private GpioPinPwmOutput rightEnablePin;
-   private GpioPinDigitalOutput rightDirectionPin;
 
    @Inject Motor() {
       // allow injection

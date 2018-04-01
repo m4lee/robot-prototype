@@ -5,7 +5,7 @@ import com.pi4j.io.gpio.RaspiPin;
 
 public class GpioUtil {
    public static Pin toPin(int pinNumber) {
-      Pin pin = null;
+      Pin pin;
       switch(pinNumber) {
          case 0:
             pin = RaspiPin.GPIO_00;

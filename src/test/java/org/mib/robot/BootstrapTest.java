@@ -9,12 +9,14 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mib.joystick.Event;
 import org.mib.joystick.Joystick;
+import org.mib.robot.configuration.ConfigurationDirectory;
 import org.mib.robot.configuration.TestConfigurationModule;
 import org.mib.robot.controller.ControllerModule;
 import org.mib.robot.event.EventModule;
 import org.mib.robot.input.MockJoystickModule;
 import org.mib.robot.motor.MockMotorModule;
 import org.mib.robot.motor.Motor;
+import org.mib.robot.pi.GpioConfiguration;
 import org.mockito.Mockito;
 
 import javax.inject.Singleton;
@@ -87,6 +89,10 @@ public class BootstrapTest {
       @SuppressWarnings("unused")
       static GpioController gpio() {
          return mock(GpioController.class);
+      }
+
+      @Provides static GpioConfiguration gpioConfiguration(ConfigurationDirectory directory) {
+         return directory.get("pi", GpioConfiguration.class);
       }
    }
 

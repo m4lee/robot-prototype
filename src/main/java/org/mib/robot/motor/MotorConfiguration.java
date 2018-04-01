@@ -2,7 +2,7 @@ package org.mib.robot.motor;
 
 import java.util.Collection;
 
-public class MotorConfiguration {
+class MotorConfiguration {
    private int pwmPeriod;
    private Collection<Instance> instance;
 
@@ -10,6 +10,7 @@ public class MotorConfiguration {
       return pwmPeriod;
    }
 
+   @SuppressWarnings("unused")
    public void setPwmPeriod(int pwmPeriod) {
       this.pwmPeriod = pwmPeriod;
    }
@@ -18,6 +19,7 @@ public class MotorConfiguration {
       return instance;
    }
 
+   @SuppressWarnings("unused")
    public void setInstance(Collection<Instance> instance) {
       this.instance = instance;
    }
@@ -33,6 +35,7 @@ public class MotorConfiguration {
          return index;
       }
 
+      @SuppressWarnings("unused")
       public void setIndex(int index) {
          this.index = index;
       }
@@ -41,6 +44,7 @@ public class MotorConfiguration {
          return name;
       }
 
+      @SuppressWarnings("unused")
       public void setName(String name) {
          this.name = name;
       }
@@ -49,6 +53,7 @@ public class MotorConfiguration {
          return enablePin;
       }
 
+      @SuppressWarnings("unused")
       public void setEnablePin(int enablePin) {
          this.enablePin = enablePin;
       }
@@ -57,6 +62,7 @@ public class MotorConfiguration {
          return directionPin;
       }
 
+      @SuppressWarnings("unused")
       public void setDirectionPin(int directionPin) {
          this.directionPin = directionPin;
       }
@@ -65,6 +71,7 @@ public class MotorConfiguration {
          return invert;
       }
 
+      @SuppressWarnings("unused")
       public void setInvert(boolean invert) {
          this.invert = invert;
       }
