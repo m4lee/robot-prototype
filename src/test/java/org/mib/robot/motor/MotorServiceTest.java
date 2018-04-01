@@ -4,11 +4,16 @@ import com.google.common.eventbus.EventBus;
 import dagger.Component;
 import org.junit.Before;
 import org.junit.Test;
+import org.mib.robot.configuration.TestConfigurationModule;
 import org.mib.robot.event.EventModule;
 
 import javax.inject.Singleton;
 import java.util.concurrent.TimeUnit;
 
+import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 public class MotorServiceTest {
@@ -24,7 +29,9 @@ public class MotorServiceTest {
    public void testStartUp() throws Exception {
       MotorService service = motorComponent.service();
       service.startAsync().awaitRunning(2000, TimeUnit.MILLISECONDS);
-      verify(motorComponent.motor()).initialize();
+      verify(motorComponent.motor(), times(2)).registerInstance(anyInt(), anyString(), anyInt(),
+            anyInt(),
+            anyBoolean(), anyInt());
    }
 
    @Test
@@ -37,7 +44,7 @@ public class MotorServiceTest {
 
       service.stopAsync().awaitTerminated(2000, TimeUnit.MILLISECONDS);
 
-      verify(motorComponent.motor()).setSpeed(Motor.Side.LEFT, 0.5f);
+      verify(motorComponent.motor()).setSpeed(0, 0.5f);
 
       service = motorComponent.service();
       service.startAsync().awaitRunning(2000, TimeUnit.MILLISECONDS);
@@ -47,11 +54,11 @@ public class MotorServiceTest {
 
       service.stopAsync().awaitTerminated(2000, TimeUnit.MILLISECONDS);
 
-      verify(motorComponent.motor()).setSpeed(Motor.Side.RIGHT, -0.5f);
+      verify(motorComponent.motor()).setSpeed(1, -0.5f);
    }
 
 
-   @Component(modules = {MockMotorModule.class, EventModule.class})
+   @Component(modules = {MockMotorModule.class, TestConfigurationModule.class, EventModule.class})
    @Singleton
    interface TestMotorComponent {
       Motor motor();

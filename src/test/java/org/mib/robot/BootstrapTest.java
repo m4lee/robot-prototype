@@ -62,10 +62,10 @@ public class BootstrapTest {
 
          Motor motor = bootstrapComponent.motor();
 
-         verify(motor, timeout(500)).setSpeed(Motor.Side.LEFT, EXPECTED_MOTOR_VALUE);
-         verify(motor, timeout(500)).setSpeed(Motor.Side.LEFT, -EXPECTED_MOTOR_VALUE);
-         verify(motor, timeout(500)).setSpeed(Motor.Side.RIGHT, EXPECTED_MOTOR_VALUE);
-         verify(motor, timeout(500)).setSpeed(Motor.Side.RIGHT, -EXPECTED_MOTOR_VALUE);
+         verify(motor, timeout(500)).setSpeed(0, EXPECTED_MOTOR_VALUE);
+         verify(motor, timeout(500)).setSpeed(0, -EXPECTED_MOTOR_VALUE);
+         verify(motor, timeout(500)).setSpeed(1, EXPECTED_MOTOR_VALUE);
+         verify(motor, timeout(500)).setSpeed(1, -EXPECTED_MOTOR_VALUE);
 
       } finally {
          bootstrap.stop();

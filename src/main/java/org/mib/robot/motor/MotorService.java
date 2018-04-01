@@ -13,6 +13,9 @@ public class MotorService extends EventQueueService {
    @SuppressWarnings("WeakerAccess")
    @Inject Motor motor;
 
+   @SuppressWarnings("WeakerAccess")
+   @Inject MotorConfiguration configuration;
+
    private static final int LEFT_MOTOR_INDEX = 0;
 
    @SuppressWarnings("WeakerAccess")
@@ -28,7 +31,12 @@ public class MotorService extends EventQueueService {
 
    @Override
    protected void startUp() {
-      motor.initialize();
+      assert configuration != null;
+
+      if(configuration.getInstance() != null) {
+         configuration.getInstance().forEach(i -> motor.registerInstance(i.getIndex(), i.getName(),
+               i.getEnablePin(), i.getDirectionPin(), i.isInvert(), configuration.getPwmPeriod()));
+      }
       getEventBus().register(this);
    }
 
@@ -36,10 +44,9 @@ public class MotorService extends EventQueueService {
    protected void handleEvent(Event event) {
       if(event instanceof ChangeMotorSpeedEvent) {
          ChangeMotorSpeedEvent changeEvent = (ChangeMotorSpeedEvent)event;
-         Motor.Side side = changeEvent.getMotor() == LEFT_MOTOR_INDEX ? Motor.Side.LEFT : Motor.Side.RIGHT;
 
-         log.fine("Setting " + side + " motor to " + changeEvent.getSpeed());
-         motor.setSpeed(side, changeEvent.getSpeed());
+         log.fine("Setting motor @ " + changeEvent.getMotor() + " to " + changeEvent.getSpeed());
+         motor.setSpeed(changeEvent.getMotor(), changeEvent.getSpeed());
       }
    }
 }
