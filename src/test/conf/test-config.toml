@@ -1,26 +1,28 @@
 [pi]
-clock-divisor = 8
-pwm-mode = "PWM_MODE_MS"
+clockDivisor = 2
+pwmMode = "PWM_MODE_MS"
 
 [joystick]
 axes = [1, 5]
 
 [motor]
-pwm-period = 1024
+pwmPeriod = 1024
 
    [[motor.instance]]
    index = 0
    name = "left"
-   enable-pin = 24
-   direction-pin = 23
+   enablePin = 24
+   directionPin = 23
    invert = true
+   minPwm = 0.33
 
    [[motor.instance]]
    index = 1
    name = "right"
-   enable-pin = 26
-   direction-pin = 27
+   enablePin = 26
+   directionPin = 27
    invert = false
+   minPwm = 0.33
 
 [controller]
 axisMotorMap = { 1 = 0, 5 = 1 }

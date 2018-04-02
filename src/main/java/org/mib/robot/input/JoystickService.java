@@ -5,7 +5,7 @@ import com.google.common.util.concurrent.AbstractIdleService;
 import org.mib.joystick.Joystick;
 
 import javax.inject.Inject;
-import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -34,8 +34,8 @@ public class JoystickService extends AbstractIdleService {
       joystick.setAxes(configuration.getAxes());
       try {
          joystick.open();
-      } catch(IOException ioe) {
-         log.log(Level.SEVERE, "Could not open joystick device.", ioe);
+      } catch (NoSuchFileException e) {
+         log.log(Level.SEVERE, "Could not open joystick interface.");
       }
    }
 

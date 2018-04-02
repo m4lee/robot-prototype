@@ -30,6 +30,7 @@ class MotorConfiguration {
       private int enablePin;
       private int directionPin;
       private boolean invert;
+      private float minPwm;
 
       public int getIndex() {
          return index;
@@ -74,6 +75,15 @@ class MotorConfiguration {
       @SuppressWarnings("unused")
       public void setInvert(boolean invert) {
          this.invert = invert;
+      }
+
+      public float getMinPwm() {
+         return minPwm;
+      }
+
+      @SuppressWarnings("unused")
+      public void setMinPwm(float minPwm) {
+         this.minPwm = minPwm;
       }
    }
 }

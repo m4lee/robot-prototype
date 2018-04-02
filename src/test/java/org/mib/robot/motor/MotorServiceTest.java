@@ -10,9 +10,7 @@ import org.mib.robot.event.EventModule;
 import javax.inject.Singleton;
 import java.util.concurrent.TimeUnit;
 
-import static org.mockito.ArgumentMatchers.anyBoolean;
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -31,7 +29,7 @@ public class MotorServiceTest {
       service.startAsync().awaitRunning(2000, TimeUnit.MILLISECONDS);
       verify(motorComponent.motor(), times(2)).registerInstance(anyInt(), anyString(), anyInt(),
             anyInt(),
-            anyBoolean(), anyInt());
+            anyBoolean(), anyInt(), anyFloat());
    }
 
    @Test

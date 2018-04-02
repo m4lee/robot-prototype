@@ -36,7 +36,7 @@ public class JoystickTest {
       }
 
       private void await() throws InterruptedException {
-         latch.await(60, TimeUnit.SECONDS);
+         latch.await(20, TimeUnit.SECONDS);
       }
 
       private List<Event> getReadEvents() {
@@ -45,17 +45,43 @@ public class JoystickTest {
    }
 
    @Test(expected = NoSuchFileException.class)
-   public void testBadOpen() throws IOException {
-      Joystick joystick = new Joystick("notafile");
+   public void testBadOpen() throws NoSuchFileException {
+      Joystick joystick = new Joystick("notadir/notafile");
       joystick.open();
    }
 
    @Test
-   public void open() throws IOException {
+   public void testOpen() throws NoSuchFileException {
       try(Joystick joystick = new Joystick(singleTempFile.toString())) {
          joystick.open();
          Assert.assertTrue("Joystick not running", joystick.isRunning());
       }
+   }
+
+   @Test
+   public void testWaitOpen() throws IOException, InterruptedException {
+      Path tempDirectory = Files.createTempDirectory("JoystickTest");
+      tempDirectory.toFile().deleteOnExit();
+
+      // define where the new file will exist
+      Path newFile = tempDirectory.resolve(singleTempFile.getFileName());
+      newFile.toFile().deleteOnExit();
+
+      TestHandler handler = new TestHandler(1);
+      try(Joystick joystick = new Joystick(newFile.toString())) {
+         joystick.addHandler(handler);
+         joystick.open();
+
+         // don't create the file immediately
+         Thread.sleep(500);
+
+         // Add the new file
+         Files.copy(singleTempFile, newFile);
+
+         // joystick should be waiting for file to be added
+         handler.await();
+      }
+      assertEquals("No events captured", 1, handler.getReadEvents().size());
    }
 
    @Test
@@ -71,15 +97,15 @@ public class JoystickTest {
    }
 
    @Test
-   public void testProcessEvents() throws IOException, InterruptedException {
+   public void testProcessEvents() throws InterruptedException, NoSuchFileException {
       testProcessEvents(1, null, singleTempFile);
       testProcessEvents(3, null, multipleTempFile);
       testProcessEvents(2, new int[] { 7 }, multipleTempFile);
       testProcessEvents(3, new int[] { 7, 8 }, multipleTempFile);
    }
 
-   private void testProcessEvents(int numberOfEvents, int[] axes, Path testFile) throws IOException,
-         InterruptedException {
+   private void testProcessEvents(int numberOfEvents, int[] axes, Path testFile)
+         throws InterruptedException, NoSuchFileException {
       TestHandler singleHandler = new TestHandler(numberOfEvents);
       try(Joystick joystick = new Joystick(testFile.toString())) {
          joystick.addHandler(singleHandler);
@@ -92,7 +118,7 @@ public class JoystickTest {
    }
 
    @Test
-   public void close() throws IOException {
+   public void testClose() throws NoSuchFileException {
       try(Joystick joystick = new Joystick(singleTempFile.toString())) {
          joystick.open();
       }

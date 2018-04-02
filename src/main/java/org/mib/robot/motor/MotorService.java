@@ -33,7 +33,8 @@ public class MotorService extends EventQueueService {
 
       if(configuration.getInstance() != null) {
          configuration.getInstance().forEach(i -> motor.registerInstance(i.getIndex(), i.getName(),
-               i.getEnablePin(), i.getDirectionPin(), i.isInvert(), configuration.getPwmPeriod()));
+               i.getEnablePin(), i.getDirectionPin(), i.isInvert(), configuration.getPwmPeriod(),
+               i.getMinPwm()));
       }
       getEventBus().register(this);
    }
