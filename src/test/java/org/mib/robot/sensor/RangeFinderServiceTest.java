@@ -3,8 +3,6 @@ package org.mib.robot.sensor;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import dagger.Component;
-import dagger.Module;
-import dagger.Provides;
 import org.junit.Before;
 import org.junit.Test;
 import org.mib.robot.configuration.TestConfigurationModule;
@@ -105,16 +103,6 @@ public class RangeFinderServiceTest {
       RangeFinderService service = component.rangeFinderService();
       service.shutDown();
       verify(component.sensor()).close();
-   }
-
-   @SuppressWarnings("WeakerAccess")
-   @Module
-   static class MockUs100Module {
-      @Provides
-      @Singleton
-      static Us100 us100() {
-         return mock(Us100.class, withSettings().useConstructor());
-      }
    }
 
    @Component(modules={MockUs100Module.class, TestConfigurationModule.class, SensorModule.class,

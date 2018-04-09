@@ -17,6 +17,8 @@ import org.mib.robot.input.MockJoystickModule;
 import org.mib.robot.motor.MockMotorModule;
 import org.mib.robot.motor.Motor;
 import org.mib.robot.pi.GpioConfiguration;
+import org.mib.robot.sensor.MockUs100Module;
+import org.mib.robot.sensor.SensorModule;
 import org.mockito.Mockito;
 
 import javax.inject.Singleton;
@@ -99,7 +101,9 @@ public class BootstrapTest {
    @Component(modules={MockJoystickModule.class,
          MockGpioModule.class,
          MockMotorModule.class,
+         MockUs100Module.class,
          ControllerModule.class,
+         SensorModule.class,
          EventModule.class,
          TestConfigurationModule.class})
    @Singleton

@@ -5,7 +5,7 @@ import dagger.Provides;
 import org.mib.robot.configuration.ConfigurationDirectory;
 
 @Module
-class SensorModule {
+public class SensorModule {
    @Provides
    RangeFinderConfiguration rangeFinderConfiguration(ConfigurationDirectory directory) {
       return directory.get("rangeFinder", RangeFinderConfiguration.class);

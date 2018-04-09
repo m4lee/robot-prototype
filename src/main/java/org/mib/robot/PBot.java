@@ -7,6 +7,7 @@ import org.mib.robot.event.EventModule;
 import org.mib.robot.input.JoystickModule;
 import org.mib.robot.motor.MotorModule;
 import org.mib.robot.pi.GpioModule;
+import org.mib.robot.sensor.SensorModule;
 
 import javax.inject.Singleton;
 
@@ -14,6 +15,7 @@ import javax.inject.Singleton;
       GpioModule.class,
       ControllerModule.class,
       MotorModule.class,
+      SensorModule.class,
       EventModule.class,
       ConfigurationModule.class})
 @Singleton

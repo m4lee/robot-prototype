@@ -8,6 +8,7 @@ import org.mib.robot.controller.ControllerService;
 import org.mib.robot.input.JoystickService;
 import org.mib.robot.motor.MotorService;
 import org.mib.robot.pi.GpioService;
+import org.mib.robot.sensor.RangeFinderService;
 
 import javax.inject.Inject;
 import java.util.concurrent.TimeUnit;
@@ -31,6 +32,9 @@ public class Bootstrap {
    @Inject
    MotorService motor;
 
+   @Inject
+   RangeFinderService rangeFinderService;
+
    private ServiceManager serviceManager;
 
    @Inject
@@ -45,15 +49,16 @@ public class Bootstrap {
       assert joystick != null;
       assert controller != null;
       assert motor != null;
+      assert rangeFinderService != null;
       assert serviceManager == null;
 
-      addServiceLoggerListener(gpio, joystick, controller, motor);
+      addServiceLoggerListener(gpio, joystick, controller, motor, rangeFinderService);
 
       // start and stop the GPIO service separately to set ordering
       gpio.startAsync().awaitRunning(SERVICE_TIMEOUT, TimeUnit.MILLISECONDS);
 
       serviceManager = new ServiceManager(Sets.newHashSet(joystick, controller,
-            motor));
+            motor, rangeFinderService));
 
       // use a shutdown hook to shutdown the services
       Runtime.getRuntime().addShutdownHook(new Thread(Bootstrap.this::stop));
