@@ -26,3 +26,14 @@ pwmPeriod = 1024
 
 [controller]
 axisMotorMap = { 1 = 0, 5 = 1 }
+
+[rangeFinder]
+pollPeriod = 250
+
+   [rangeFinder.us100Configuration]
+   serialDevicePath = "/dev/serial0"
+   baud = 9600
+   dataBits = 8
+   parity = "NONE"
+   stopBits = 1
+   flowControl = "NONE"
