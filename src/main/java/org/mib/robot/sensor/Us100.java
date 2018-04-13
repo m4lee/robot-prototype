@@ -103,8 +103,10 @@ public class Us100 implements AutoCloseable {
    }
 
    void triggerReading() throws IOException {
-      serial.getOutputStream().write(new byte[] { 0x55 });
-      state = SensorState.COMMAND_SENT;
+      if(state == SensorState.IDLE) {
+         serial.getOutputStream().write(new byte[]{0x55});
+         state = SensorState.COMMAND_SENT;
+      }
    }
 
    @Override

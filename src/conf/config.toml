@@ -28,7 +28,7 @@ pwmPeriod = 1024
 axisMotorMap = { 1 = 0, 5 = 1 }
 
 [rangeFinder]
-pollPeriod = 250
+pollPeriod = 150
 
    [rangeFinder.us100Configuration]
    serialDevicePath = "/dev/serial0"
