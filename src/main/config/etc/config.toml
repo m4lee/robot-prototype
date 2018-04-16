@@ -3,7 +3,7 @@ clockDivisor = 2
 pwmMode = "PWM_MODE_MS"
 
 [joystick]
-axes = [1, 5]
+axes = [1, 4]
 
 [motor]
 pwmPeriod = 1024
@@ -25,7 +25,7 @@ pwmPeriod = 1024
    minPwm = 0.33
 
 [controller]
-axisMotorMap = { 1 = 0, 5 = 1 }
+axisMotorMap = { 1 = 0, 4 = 1 }
 
 [rangeFinder]
 pollPeriod = 150

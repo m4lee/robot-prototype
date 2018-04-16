@@ -1,0 +1,14 @@
+[Unit]
+Description=Robot Prototype Java Service
+After=
+
+[Service]
+Type=simple
+KillMode=process
+WorkingDirectory=/home/pi/robot-prototype
+ExecStart=/usr/bin/java -Djava.util.logging.config.file=etc/logging.properties -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar robot-prototype-1.0-SNAPSHOT.jar
+Restart=always
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

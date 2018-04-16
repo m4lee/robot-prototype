@@ -1,0 +1,33 @@
+#!/bin/bash
+
+SERVICE_NAME=robot-prototype.service
+
+# abort if service already installed
+if systemctl list-unit-files | grep $SERVICE_NAME
+then
+   echo "Robot Prototype Service already installed"
+   exit 1
+fi
+
+# install the service
+if [ ! -e /etc/systemd/system/$SERVICE_NAME ]
+then
+   echo "Linking service definition"
+   DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+   ln --symbolic $DIR/$SERVICE_NAME /etc/systemd/system
+fi
+
+echo "Asking systemd to reload"
+systemctl daemon-reload
+
+if ! systemctl is-enabled $SERVICE_NAME
+then
+   echo "Enabling service"
+   systemctl enable $SERVICE_NAME
+fi
+
+if ! systemctl --type=service --state=running list-units | grep $SERVICE_NAME
+then
+   echo "Starting service"
+   systemctl start $SERVICE_NAME
+fi

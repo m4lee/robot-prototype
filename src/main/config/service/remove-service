@@ -1,0 +1,26 @@
+#!/bin/bash
+
+SERVICE_NAME=robot-prototype.service
+
+# abort if service not already installed
+if ! systemctl list-unit-files | grep $SERVICE_NAME
+then
+   echo "Robot Prototype Service is not installed"
+   exit 0
+fi
+
+if systemctl --type=service --state=running list-units | grep $SERVICE_NAME
+then
+   echo "Stopping service"
+   systemctl stop $SERVICE_NAME
+fi
+
+if systemctl is-enabled $SERVICE_NAME
+then
+   echo "Disabling and removing service"
+   systemctl disable $SERVICE_NAME
+fi
+
+echo "Asking systemd to reload"
+systemctl daemon-reload
+systemctl reset-failed

@@ -1,5 +1,11 @@
 #!/bin/bash
 
-scp target/dependency/guava-24.0-jre.jar target/dependency/dagger-2.15.jar target/dependency/javax.inject-1.jar target/robot-prototype-1.0-SNAPSHOT.jar target/dependency/pi4j-core-1.2-SNAPSHOT.jar target/dependency/toml4j-0.7.2.jar target/dependency/gson-2.8.1.jar "pi@raspberrypi:/home/pi/Documents/Java\ Tests"
+if ssh -lpi raspberrypi '[ -e robot-prototype/service/remove-service ]'
+then
+   ssh -lpi raspberrypi 'sudo robot-prototype/service/remove-service && rm -rf robot-prototype/*'
+fi
 
-scp -r src/main/config/etc "pi@raspberrypi:/home/pi/Documents/Java\ Tests"
+scp target/robot-prototype-1.0-SNAPSHOT-bin.tar.gz "pi@raspberrypi:robot-prototype"
+ssh -lpi raspberrypi 'tar -C robot-prototype -xzvf robot-prototype/robot-prototype-1.0-SNAPSHOT-bin.tar.gz && sudo robot-prototype/service/install-service'
+
+

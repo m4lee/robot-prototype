@@ -1,0 +1,33 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+   <id>bin</id>
+   <formats>
+      <format>tar.gz</format>
+   </formats>
+   <includeBaseDirectory>false</includeBaseDirectory>
+   <fileSets>
+      <!-- Collect the application jar -->
+      <fileSet>
+         <directory>${project.build.directory}</directory>
+         <outputDirectory></outputDirectory>
+         <includes>
+            <include>*.jar</include>
+         </includes>
+      </fileSet>
+      <!-- Collect the configuration files -->
+      <fileSet>
+         <directory>${project.basedir}/src/main/config</directory>
+         <outputDirectory></outputDirectory>
+      </fileSet>
+   </fileSets>
+   <dependencySets>
+      <!-- Collect the dependencies-->
+      <dependencySet>
+         <outputDirectory>lib/</outputDirectory>
+         <useProjectArtifact>false</useProjectArtifact>
+         <unpack>false</unpack>
+         <scope>runtime</scope>
+      </dependencySet>
+   </dependencySets>
+</assembly>
