@@ -46,6 +46,7 @@ public class MotorService extends EventQueueService {
 
          log.fine("Setting motor @ " + changeEvent.getMotor() + " to " + changeEvent.getSpeed());
          motor.setSpeed(changeEvent.getMotor(), changeEvent.getSpeed());
+         getEventBus().post(new MotorSpeedUpdatedEvent(changeEvent.getMotor()));
       }
    }
 }
