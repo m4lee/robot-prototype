@@ -20,7 +20,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class ControllerService extends EventQueueService {
+public class ManualControllerService extends EventQueueService {
    public static final String ID = "controller";
 
    enum State { INIT, CHANGING_SPEEDS, PAUSING, PAUSED }
@@ -37,7 +37,7 @@ public class ControllerService extends EventQueueService {
 
 
    @Inject
-   ControllerService(ControllerConfiguration configuration) {
+   ManualControllerService(ControllerConfiguration configuration) {
       axisMotorMap = Collections.unmodifiableMap(configuration.getAxisMotorMap());
       pendingSpeedChanges = axisMotorMap.values().stream().collect(Collectors.toMap(
             Function.identity(), i -> new AtomicInteger(0)));
@@ -154,7 +154,7 @@ public class ControllerService extends EventQueueService {
    }
 
    private Action postControlProcessed(ControllerControlEvent.Instruction instruction) {
-      return () -> getEventBus().post(new ControllerControlEvent(instruction, ControllerService.ID));
+      return () -> getEventBus().post(new ControllerControlEvent(instruction, ManualControllerService.ID));
    }
 
    int mapToMotor(int axis) {

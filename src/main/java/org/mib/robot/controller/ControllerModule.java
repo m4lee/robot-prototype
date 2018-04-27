@@ -8,6 +8,6 @@ import org.mib.robot.configuration.ConfigurationDirectory;
 public class ControllerModule {
    @Provides
    ControllerConfiguration configuration(ConfigurationDirectory configurationDirectory) {
-      return configurationDirectory.get(ControllerService.ID, ControllerConfiguration.class);
+      return configurationDirectory.get(ManualControllerService.ID, ControllerConfiguration.class);
    }
 }

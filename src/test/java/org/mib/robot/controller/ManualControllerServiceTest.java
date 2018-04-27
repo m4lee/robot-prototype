@@ -21,9 +21,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-public class ControllerServiceTest {
-   private TestControllerComponent controllerComponent;
-   private ControllerService service;
+public class ManualControllerServiceTest {
+   private TestManualControllerComponent controllerComponent;
+   private ManualControllerService service;
 
    private static class SpeedHandler {
       private ChangeMotorSpeedEvent captured;
@@ -42,8 +42,9 @@ public class ControllerServiceTest {
 
    @Before
    public void before()  throws TimeoutException {
-      controllerComponent = DaggerControllerServiceTest_TestControllerComponent.create();
-      service = controllerComponent.controller();
+      controllerComponent =
+            DaggerManualControllerServiceTest_TestManualControllerComponent.create();
+      service = controllerComponent.manualController();
       service.startAsync().awaitRunning(2000, TimeUnit.MILLISECONDS);
    }
 
@@ -60,7 +61,7 @@ public class ControllerServiceTest {
       controllerComponent.eventBus().register(handler);
 
       ControllerControlEvent controllerControlEvent = new ControllerControlEvent(
-            ControllerControlEvent.Instruction.START, ControllerService.ID);
+            ControllerControlEvent.Instruction.START, ManualControllerService.ID);
       controllerComponent.eventBus().post(controllerControlEvent);
 
       JoystickEvent joystickEvent = new JoystickEvent(1, 0.5f);
@@ -89,19 +90,19 @@ public class ControllerServiceTest {
       controllerComponent.eventBus().register(controlHandler);
 
       ControllerControlEvent controllerControlEvent = new ControllerControlEvent(
-            ControllerControlEvent.Instruction.START, ControllerService.ID);
+            ControllerControlEvent.Instruction.START, ManualControllerService.ID);
       controllerComponent.eventBus().post(controllerControlEvent);
 
       controlHandler.latch.await(2000, TimeUnit.MILLISECONDS);
       assertNotNull("control event not raised", controlHandler.captured);
-      assertEquals("control message from wrong controller", ControllerService.ID,
+      assertEquals("control message from wrong manualController", ManualControllerService.ID,
             controlHandler.captured.getId());
       assertEquals("wrong control message instruction", ControllerControlEvent.Instruction.STARTED,
             controlHandler.captured.getInstruction());
 
       controlHandler.reset();
       controllerControlEvent = new ControllerControlEvent(
-            ControllerControlEvent.Instruction.STOP, ControllerService.ID);
+            ControllerControlEvent.Instruction.STOP, ManualControllerService.ID);
       controllerComponent.eventBus().post(controllerControlEvent);
 
       // post the motor speed updated events to simulate the actual motor service
@@ -131,8 +132,8 @@ public class ControllerServiceTest {
 
    @Component(modules={ControllerModule.class, TestConfigurationModule.class, EventModule.class})
    @Singleton
-   interface TestControllerComponent {
-      ControllerService controller();
+   interface TestManualControllerComponent {
+      ManualControllerService manualController();
       EventBus eventBus();
    }
 }
