@@ -36,7 +36,7 @@ public class BootstrapTest {
    }
 
    @Test
-   public void integrationTest() throws TimeoutException{
+   public void integrationTest() throws TimeoutException {
       final int JOYSTICK_VALUE = 1024;
       final float EXPECTED_MOTOR_VALUE = (float)JOYSTICK_VALUE / Event.MAX_VALUE;
 

@@ -21,7 +21,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ManualControllerService extends EventQueueService {
-   public static final String ID = "controller";
+   public static final String ID = "manualController";
 
    enum State { INIT, CHANGING_SPEEDS, PAUSING, PAUSED }
    enum Trigger { START, MANUAL_INPUT, PAUSE, SPEED_CHANGED, RESUME }

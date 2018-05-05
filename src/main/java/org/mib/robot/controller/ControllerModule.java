@@ -7,7 +7,12 @@ import org.mib.robot.configuration.ConfigurationDirectory;
 @Module
 public class ControllerModule {
    @Provides
-   ControllerConfiguration configuration(ConfigurationDirectory configurationDirectory) {
+   ControllerConfiguration manualControllerConfiguration(ConfigurationDirectory configurationDirectory) {
       return configurationDirectory.get(ManualControllerService.ID, ControllerConfiguration.class);
+   }
+
+   @Provides
+   SelectorConfiguration controllerSelectorConfiguration(ConfigurationDirectory configurationDirectory) {
+      return configurationDirectory.get(ControllerSelectorService.ID, SelectorConfiguration.class);
    }
 }

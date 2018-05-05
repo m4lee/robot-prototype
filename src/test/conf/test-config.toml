@@ -24,7 +24,11 @@ pwmPeriod = 1024
    invert = false
    minPwm = 0.33
 
-[controller]
+[selector]
+   defaultController = "manualController"
+   buttonControllerMap = { 0 = "manualController" }
+
+[manualController]
 axisMotorMap = { 1 = 0, 5 = 1 }
 
 [rangeFinder]

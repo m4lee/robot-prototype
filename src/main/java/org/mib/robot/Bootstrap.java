@@ -4,6 +4,7 @@ import com.google.common.collect.Sets;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.Service;
 import com.google.common.util.concurrent.ServiceManager;
+import org.mib.robot.controller.ControllerSelectorService;
 import org.mib.robot.controller.ManualControllerService;
 import org.mib.robot.input.JoystickService;
 import org.mib.robot.motor.MotorService;
@@ -27,6 +28,9 @@ public class Bootstrap {
    JoystickService joystick;
 
    @Inject
+   ControllerSelectorService selector;
+
+   @Inject
    ManualControllerService manualController;
 
    @Inject
@@ -47,17 +51,19 @@ public class Bootstrap {
    void start() throws TimeoutException {
       assert gpio != null;
       assert joystick != null;
+      assert selector != null;
       assert manualController != null;
       assert motor != null;
       assert rangeFinderService != null;
       assert serviceManager == null;
 
-      addServiceLoggerListener(gpio, joystick, manualController, motor, rangeFinderService);
+      addServiceLoggerListener(gpio, joystick, selector, manualController, motor,
+            rangeFinderService);
 
       // start and stop the GPIO service separately to set ordering
       gpio.startAsync().awaitRunning(SERVICE_TIMEOUT, TimeUnit.MILLISECONDS);
 
-      serviceManager = new ServiceManager(Sets.newHashSet(joystick, manualController,
+      serviceManager = new ServiceManager(Sets.newHashSet(joystick, manualController, selector,
             motor, rangeFinderService));
 
       // use a shutdown hook to shutdown the services
