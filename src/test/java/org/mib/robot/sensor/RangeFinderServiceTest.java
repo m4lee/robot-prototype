@@ -82,17 +82,28 @@ public class RangeFinderServiceTest {
 
    @Test
    public void testReadings() throws Exception {
+      class SensorReadingHandler {
+         private SensorReadingEvent event;
+         private final CountDownLatch latch = new CountDownLatch(1);
+         @Subscribe
+         public void onSensorError(SensorReadingEvent event) {
+            this.event = event;
+            latch.countDown();
+         }
+      }
       doCallRealMethod().when(component.sensor()).addHandler(any());
       doCallRealMethod().when(component.sensor()).raiseReading(anyFloat(), anyLong());
+
+      SensorReadingHandler handler = new SensorReadingHandler();
+      component.eventBus().register(handler);
 
       RangeFinderService service = component.rangeFinderService();
       try {
          service.startAsync().awaitRunning(2000, TimeUnit.MILLISECONDS);
          component.sensor().raiseReading(1f, 0);
-         component.sensor().raiseReading(2f, 0);
-         component.sensor().raiseReading(3f, 0);
 
-         assertEquals("Wrong average captured.", 2f, service.getLastAverage(), 0f);
+         handler.latch.await(2000, TimeUnit.MILLISECONDS);
+         assertNotNull("Reading event not raised", handler.event);
       } finally {
          service.stopAsync().awaitTerminated(2000, TimeUnit.MILLISECONDS);
       }

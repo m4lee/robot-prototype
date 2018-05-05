@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 
 public class RangeFinderService extends AbstractIdleService {
    private static final Logger log = Logger.getLogger(RangeFinderService.class.getName());
+   private static final String ID = "rangeFinder";
    private static final int MAX_READINGS = 10;
 
    private static class Reading {
@@ -48,9 +49,6 @@ public class RangeFinderService extends AbstractIdleService {
    @SuppressWarnings("WeakerAccess")
    RangeFinderConfiguration configuration;
 
-   private final ScheduledExecutorService pollingExecutor = Executors.newScheduledThreadPool(1);
-   private final Deque<Reading> readings = new ArrayDeque<>(MAX_READINGS);
-
    @Inject
    @SuppressWarnings("WeakerAccess")
    public RangeFinderService() {
@@ -62,18 +60,13 @@ public class RangeFinderService extends AbstractIdleService {
       distanceSensor.addHandler(new SensorEventHandler() {
          @Override
          public void onReading(float reading, long time) {
-            log.finest("Distance reading: " + reading);
-            synchronized(readings) {
-               readings.addFirst(new Reading(reading, time));
-               if (readings.size() > MAX_READINGS) {
-                  readings.removeLast();
-               }
-            }
+            eventBus.post(new SensorReadingEvent(ID, reading, time));
+            poll();
          }
 
          @Override
          public void onBadReading(Object source) {
-            eventBus.post(new SensorErrorEvent(source));
+            eventBus.post(new SensorErrorEvent(ID));
             log.severe("Bad reading from " + source);
          }
       });
@@ -85,8 +78,8 @@ public class RangeFinderService extends AbstractIdleService {
             configuration.getUs100Configuration().getStopBits(),
             configuration.getUs100Configuration().getFlowControl());
 
-      pollingExecutor.scheduleAtFixedRate(this::poll, 0, configuration.getPollPeriod(),
-            TimeUnit.MILLISECONDS);
+      poll();
+
    }
 
    void poll() {
@@ -94,24 +87,12 @@ public class RangeFinderService extends AbstractIdleService {
          distanceSensor.triggerReading();
       } catch(Exception e) {
          log.log(Level.SEVERE, "Error triggering a reading.", e);
+         eventBus.post(new SensorErrorEvent(ID));
       }
    }
 
    @Override
    protected void shutDown() throws Exception {
-      try {
-         pollingExecutor.shutdown();
-         pollingExecutor.awaitTermination(2000, TimeUnit.MILLISECONDS);
-      } catch(Exception e) {
-         log.log(Level.SEVERE, "Error while closing range finder.", e);
-      }
       distanceSensor.close();
-   }
-
-   public float getLastAverage() {
-      synchronized(readings) {
-         return readings.stream().collect(Collectors.averagingDouble(Reading::getReading))
-               .floatValue();
-      }
    }
 }

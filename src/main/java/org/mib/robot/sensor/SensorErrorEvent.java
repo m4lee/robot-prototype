@@ -4,14 +4,14 @@ import org.mib.robot.event.Event;
 
 @SuppressWarnings("WeakerAccess")
 public class SensorErrorEvent extends Event {
-   private final Object source;
+   private final String source;
 
-   public SensorErrorEvent(Object source) {
+   public SensorErrorEvent(String source) {
       this.source = source;
    }
 
    @SuppressWarnings("unused")
-   public Object getSource() {
+   public String getSource() {
       return source;
    }
 }
